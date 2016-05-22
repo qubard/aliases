@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>CS:GO Multi-Say Bind Generator</title>
+	<link rel="icon" type="image/png" href="favicon.ico" >
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		var submit = function() { 
+			$.post("/", {name: $("#alias").val(), text: $("#text").val().replace(/\n/g, ' ').replace(/;/g,':').replace(/"/g,'\'')}, function(data) {
+				$("#response").html("");
+				for(x in data) {
+					$("#response").append(data[x] + "</br>");
+				}
+			});
+		}
+	</script>
+</head>
+<body style="background-color:#FFF">
+	<div style="margin: 2% auto; width: 600px">
+		<h1 style="font-size:20px; background-color:#000; color:#00FF00; display:inline-block;font-family:monospace">CS:GO Multi-Say Bind Generator</h1>
+		</br>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/TyZ5hOv0fIA" frameborder="0" allowfullscreen></iframe>
+		</br>
+		<b>Paste the text for your bind into the box below:</b>
+		</br>
+		<b style="background-color:#000;color:#00FF00; font-family:monospace">latest update (02/18/16):</b> fixed output to not split words mid-sentence
+		<textarea id="text" style="min-width:400px; max-width:400px; margin-top: 5px" rows="6" cols="50"></textarea>
+		</br><input type="text" id="alias" placeholder="Bind name"><br>
+		<button style="margin-top:5px" onclick="submit()">Submit</button>
+		</br>
+		</br>
+		<b>IMPORTANT FAQ (PLEASE READ)</b>
+		<p><b>Q:</b> What is this? </br><i>A CS:GO bind generator which lets you bind multiple say(s) into one bind.</i></p>
+		<p><b>Q:</b> I'm trying to paste everything in the console, but it doesn't work?</br><i>The console in CS:GO has a character limit; paste each command line by line.</i></p>
+		<p><b>Q:</b> Why do I lose my binds when I exit the game?</br><i>Aliases are not written to your config, for some reason, so they have to be re-ran every time the game starts. The solution is to <i style="color:red">copy and paste everything into your cfg</i>.</i></p>
+		<p id="response" style="margin-top:-5px;color:#00FF00; background-color:#000;font-family:monospace"></p>
+		<center>
+			<p style="background-color:#000; margin-top: -7px; color:#FFF; display:inline-block;font-family:monospace">made in 20 minutes by <a target="_blank" href="http://blueberrypancak.es">cub</a></b>
+		</center>
+	</div>
+</body>
+</html>
