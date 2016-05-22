@@ -1,4 +1,2 @@
-# aliases
-CS:GO Multi-Say Bind Generator
-
+# Screenshot
 ![](https://raw.githubusercontent.com/qubard/aliases/master/screenshot.png)
