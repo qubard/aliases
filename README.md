@@ -1,2 +1,3 @@
-# Screenshot
-![](https://raw.githubusercontent.com/qubard/aliases/master/screenshot.png)
+# Demo
+
+A live demo can be found [here](http://generator.blueberrypancak.es).
